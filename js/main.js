@@ -155,3 +155,100 @@ const SERVICE_FUNC = () => {
 };
 
 SERVICE_FUNC();
+
+const FAQ = () => {
+  const faqs = [
+    {
+      id: 1,
+      question:
+        "What programming languages do you use for custom Shopify development?",
+      response:
+        "We primarily use Liquid (Shopify's templating language), HTML, CSS, JavaScript, and Ruby for custom app development and theme modifications to ensure seamless integrations and enhanced store functionality.",
+    },
+    {
+      id: 2,
+      question: "How do you integrate third-party apps with Shopify?",
+      response:
+        "We integrate third-party applications using Shopify’s API, webhooks, and custom app development to enhance your store’s functionality, ensuring smooth data transfer, real-time updates, and optimized workflows.",
+    },
+    {
+      id: 3,
+      question:
+        "What are the best practices for optimizing Shopify store performance?",
+      response:
+        "We optimize store performance through techniques like lazy loading, image compression, script minification, caching strategies, CDN integration, and database optimization to reduce load times and improve user experience.",
+    },
+    {
+      id: 4,
+      question: "How do you ensure the security of my Shopify store?",
+      response:
+        "We implement best practices for security, such as SSL encryption, regular software updates, secure payment gateway integration, two-factor authentication, and vulnerability scans to protect your store from data breaches and attacks.",
+    },
+    {
+      id: 5,
+      question: "Can you help with custom Shopify app development?",
+      response:
+        "Yes, we specialize in developing custom Shopify apps using Shopify’s API and private apps to add unique features, automate processes, and provide tailored solutions that integrate seamlessly with your store’s existing ecosystem.",
+    },
+  ];
+
+  //Let add the faq in the html
+  const containerGroup = document.querySelector(".faq__containerGroup");
+  const InerFAQ = faqs.map((faq) => {
+    const { id, question, response } = faq;
+    return `<div class="faq__container">
+            <div class="faq__card">
+              <!-- Question -->
+              <div class="faq__question">
+                <div class="faq__question-title">
+                  <h3>${question}</h3>
+                </div>
+                <div class="faq__question-icons">
+                  <span class="faq__question-iconPlus">
+                    <img
+                      src="./images/plus-circle-svgrepo-com.svg"
+                      alt="icon plus"
+                    />
+                  </span>
+                  <span class="faq__question-iconMinus">
+                    <img
+                      src="./images/minus-circle-svgrepo-com.svg"
+                      alt="icon minus"
+                    />
+                  </span>
+                </div>
+              </div>
+              <!-- Response -->
+              <div class="faq__response">
+                <p>
+                  ${response}
+                </p>
+              </div>
+            </div>
+          </div>`;
+  });
+  containerGroup.innerHTML = InerFAQ.join();
+
+  // Toggle faq
+  const responseSection = document.querySelectorAll(".faq__response");
+  const minusIcon = document.querySelectorAll(".faq__question-iconMinus");
+  const plusIcon = document.querySelectorAll(".faq__question-iconPlus");
+
+  for (let p = 0; p < plusIcon.length; p++) {
+    plusIcon[p].addEventListener("click", (e) => {
+      // Loop minus icon
+      for (let m = 0; m < minusIcon.length; m++) {
+        //Loop response
+        for (let r = 0; r < responseSection.length; r++) {
+          if (p === r) {
+            responseSection[r].style.display = "block";
+            plusIcon[p].style.display = "none";
+            minusIcon[m].style.display = "block";
+          }
+        }
+      }
+    });
+  }
+};
+
+FAQ();
