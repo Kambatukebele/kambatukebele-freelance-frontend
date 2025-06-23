@@ -226,29 +226,28 @@ const FAQ = () => {
               </div>
             </div>
           </div>`;
-  });
-  containerGroup.innerHTML = InerFAQ.join();
+  }).join("");
+  containerGroup.innerHTML = InerFAQ;
 
   // Toggle faq
   const responseSection = document.querySelectorAll(".faq__response");
   const minusIcon = document.querySelectorAll(".faq__question-iconMinus");
   const plusIcon = document.querySelectorAll(".faq__question-iconPlus");
 
-  for (let p = 0; p < plusIcon.length; p++) {
-    plusIcon[p].addEventListener("click", (e) => {
-      // Loop minus icon
-      for (let m = 0; m < minusIcon.length; m++) {
-        //Loop response
-        for (let r = 0; r < responseSection.length; r++) {
-          if (p === r) {
-            responseSection[r].style.display = "block";
-            plusIcon[p].style.display = "none";
-            minusIcon[m].style.display = "block";
-          }
-        }
-      }
-    });
-  }
+  plusIcon.forEach((plus, index) =>{
+    plus.addEventListener("click", () => {
+      responseSection[index].style.display = "block";
+      plus.style.display = "none";   
+      minusIcon[index].style.display = "block"; 
+    })
+  })
+  minusIcon.forEach((minus, index) =>{
+    minus.addEventListener("click", () => {
+      responseSection[index].style.display = "none";
+      minus.style.display = "none";   
+      plusIcon[index].style.display = "block"; 
+    })
+  })
 };
 
 FAQ();

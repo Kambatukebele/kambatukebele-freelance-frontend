@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- End Google fonts -->
     <!-- Css -->
     <link rel="stylesheet" href="./css/reset.css" />
@@ -119,6 +116,7 @@
       </div>
     </header>
     <!-- Slider Images -->
+    
     <section class="slider__image">
       <div class="slider__image--block">
         <img src="./images/project-img-1.jpg" alt="" />
@@ -151,6 +149,7 @@
         <img src="./images/slider-img-4.jpg" alt="" />
       </div>
     </section>
+    
     <!-- Description -->
     <section class="description">
       <div class="container">
@@ -296,7 +295,7 @@
     <!-- End Our services -->
     <!-- Contact form -->
     <section class="form">
-      <div class="container">
+      <div class="container mx-auto">
         <div class="form__group">
           <!-- Left -->
           <div class="form__left">
@@ -318,23 +317,14 @@
           <!-- Right -->
           <div class="form__right-all">
             <form class="form__right">
-              <div class="form__right--input">
-                <label for="name">Enter Your Name</label>
-                <input
-                  id="name"
-                  type="text"
-                  placeholder="John Doe"
-                  name="name"
-                />
-              </div>
               <div class="form__right--inputGroup">
                 <div class="form__right--input">
-                  <label for="company">Company Name</label>
+                  <label for="name">Enter Your Name</label>
                   <input
-                    id="company"
+                    id="name"
                     type="text"
-                    placeholder="Ezagrow LLC"
-                    name="company"
+                    placeholder="John Doe"
+                    name="name"
                   />
                 </div>
                 <div class="form__right--input">
@@ -345,8 +335,12 @@
                     placeholder="JohnDoe@test.com"
                     name="email"
                   />
-                </div>
+                </div>               
               </div>
+              <div class="form__right--inputGroup">
+                
+              </div>
+              
               <div class="form__right--inputGroup">
                 <div class="form__right--input">
                   <label for="service">Service Required</label>
@@ -373,19 +367,22 @@
                   />
                 </div>
               </div>
-              <div class="form__right--input">
+              <div class="form__right--textarea">
                 <label for="project">Project Details</label>
                 <textarea
+                  id="project"
+                  cols="30"
+                  rows="10"
                   name="project"
                   id="project"
                   placeholder="Feel free to write us more about your project"
                 ></textarea>
               </div>
-              <div>
-                <button class="btn btn-primary btnLink" type="submit">
+             <div class="form__right--btn">
+              <button class="btn btn-primary btnLink" type="submit">
                   Submit Now
                 </button>
-              </div>
+             </div>
             </form>
           </div>
         </div>
